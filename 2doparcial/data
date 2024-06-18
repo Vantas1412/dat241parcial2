@@ -1,0 +1,17 @@
+create table dim_ciudad
+SELECT id, CountryCode as codigoPais, name as nombre
+FROM city
+
+create table dim_pais
+SELECT Code as codigo, Name as nombre
+FROM Country
+
+create table dim_continente
+select distinct continent
+FROM Country
+
+create table dim_region
+select distinct region
+FROM Country
+
+alter table dim_continente add id int primary key AUTO_INCREMENT
